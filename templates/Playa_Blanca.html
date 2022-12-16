@@ -1,0 +1,106 @@
+{% extends "parque_tayrona.html"%}
+{%block title%}PLAYA BLANCA{%endblock%}
+{%block titulo%}PLAYA BLANCA{%endblock%}
+
+{%block descripcion%}
+  Después de un pequeño viaje en lancha, de aproximadamente 10 minutos, disfrutando de la vistas
+  desde el mar, con la respectiva seguridad de los chalecos y un asiento cómodo para el recorrido, nos
+  encontraremos con Playa blanca, uno de los sitios mas hermosos, donde podrás pasar todo el día nadando,
+  bebiendo tu cerveza, haciendo las diferentes actividades acuáticas que allí se hacen ¡Disfrutando con
+  tu familia, pareja, amigos y hasta solo!
+  <br>
+  Ademas de disfrutar del agua y el ambiente, también cuenta con muchísimos restaurantes que ofrecen 
+  nuestra comida típica y vendedores ambulantes con accesorios y muchísima variedad de cosas.
+{%endblock%}
+
+
+<br>
+<div class="galeria">
+  <ul>
+      {%block galeria%}
+      <li><img src="{{url_for('static', filename="img/playablanca1.jpg")}}" alt=""></li>
+      <li><img src="{{url_for('static', filename="img/playablanca2.jpg")}}" alt=""></li>
+      <li><img src="{{url_for('static', filename="img/playablanca3.jpg")}}"  alt=""></li>
+      <li><img src="{{url_for('static', filename="img/playablanca4.jpg")}}"  alt=""></li>
+      {%endblock%}
+  </ul>
+</div>
+
+{%block incluye%}
+  <li class="incluido">
+    <label><input onclick="return false" checked="TRUE" type="checkbox" class="turnCheck" name="playa" value="playa">
+    <span>TRANSPORTE</span></label>
+  </li>
+  <li class="incluido">
+    <label><input onclick="return false" checked="TRUE" type="checkbox" class="turnCheck" name="playa" value="playa">
+    <span>DESAYUNO</span></label>
+  </li>
+  <li class="incluido">
+    <label><input onclick="return false" checked="TRUE" type="checkbox" class="turnCheck" name="playa" value="playa">
+    <span>ALMUERZO</span></label>
+  </li>
+  <li class="incluido">
+    <label><input onclick="return false" checked="TRUE" type="checkbox" class="turnCheck" name="playa" value="playa">
+    <span>GUÍA</span></label>
+  </li>
+  <li class="incluido">
+    <label><input onclick="return false" checked="TRUE" type="checkbox" class="turnCheck" name="playa" value="playa">
+    <span>SEGURO</span></label>
+  </li>
+{%endblock%}
+
+{%block noincluye%}
+  <li>
+    <label><input onclick="return false" type="checkbox" class="turnCheck" name="playa" value="playa">
+    <span>Actividades como careteo</span></label>
+  </li>
+  
+  <li>
+    <label><input onclick="return false" type="checkbox" class="turnCheck" name="playa" value="playa">
+    <span>Cualquier otra que no se encuentre descrita en la sección de arriba</span></label>
+  </li>
+{%endblock%}
+
+{%block recorrido%}
+  <ol>
+    <li>Lugar de encuentro</li>
+    <li>DESTINO; Cabo San Juan</li>
+  </ol>
+{%endblock%}
+
+{%block horario%}
+  <p>
+    INICIO - 5:30AM
+    <br><br>
+    REGRESO - 3:30PM
+  </p>
+{%endblock%}
+
+{% block producto%}
+  <div class="producto_sitio">
+    <img src="{{url_for('static', filename="img/playablancaventa.jpg")}}" alt="Portada" class="portada">
+    <div class="nombre">PLAYA BLANCA</div>
+    <form action="/compra" method="post">
+      
+      <div class="botones">
+        <div class="boton">
+          <button type="submit" class="comprar" id="comprar" name="comprar">
+            <svg class="carrito" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256"/><circle cx="80" cy="216" r="16" class="color000 svgShape"/><circle cx="184" cy="216" r="16" class="color000 svgShape"/><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="M42.28575,72H221.71429l-26.39873,92.39554A16,16,0,0,1,179.93118,176H84.06882a16,16,0,0,1-15.38438-11.60446L32.51492,37.80223A8,8,0,0,0,24.82273,32H8" class="colorStroke000 svgStroke"/></svg>
+          </button>
+        </div>
+        <div class="label_precio">
+          <input  class="valor" name="destino" type="text" value="PLAYA BLANCA">
+          <input  class="valor" name="valor" type="number" value="18">
+          <label for="comprar" class="precio">$18 USD</label>
+        </div>
+      </div>
+    </form>
+    <div class="vermas">
+      <a href="/minca" id="vermas1" class="vermas_label">VER MÁS</a>
+      <label for="vermas1">
+        <svg class="right" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 32 32"><path fill="#009fd7" d="M28.66 17.11a1.19 1.19 0 0 0 .09-.15l.1-.2.06-.2a.84.84 0 0 0 .05-.17 2 2 0 0 0 0-.78.84.84 0 0 0-.05-.17l-.06-.2-.1-.2a1.19 1.19 0 0 0-.09-.15 1.79 1.79 0 0 0-.25-.31l-10-10a2 2 0 0 0-2.82 2.82l6.58 6.6H5a2 2 0 0 0 0 4h17.17l-6.58 6.59a2 2 0 1 0 2.82 2.82l10-10a1.79 1.79 0 0 0 .25-.3Z" class="color000 svgShape"/></svg>
+      </label>
+    </div>
+    <br>
+  </div>
+{%endblock%}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>buscador</title>
+</head>
+<style>
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: arial;
+    }
+
+    .wrap{
+        margin: auto;
+        width: 100%;
+    }
+
+    .wrap p{
+        font-size: 18px;
+    }
+
+    .dataTables_length{
+        display: none;
+    }
+
+    .dataTables_filter{
+        display: none;
+    }
+    
+    .dataTables_info{
+        display: none;
+    }
+
+    .dataTables_paginate{
+        display: none;
+    }
+
+    header{
+        width: 100%;
+        position: fixed;
+        height: 100vh;
+        background: rgb(0, 0, 0, 0.5);
+    }
+
+    .header-top{
+        width: 100%;
+        background: rgb(0, 110, 255);
+    }
+
+    .navegacion{
+        width: 90%;
+        margin: auto;
+        padding: 12px 0;
+    }
+
+    input[type="search"]{
+        padding: 10px;
+        padding-right: 35px;
+        border: none;
+    }
+
+    .search-table td{
+        display: block;
+        width: 100%;
+    }
+
+    tbody td tr{
+        width: 100%;
+    }
+
+    .search{
+        width: 90%;
+        margin: auto;
+        background: #fff;
+        padding: 0 10px;
+        padding-bottom: 5px;
+        max-height: 85%;
+        overflow-x: hidden;
+    }
+
+    td a{
+        text-decoration: none;
+        font-size: 18px;
+        color: black;
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 20px 0;
+        padding-left: 20px;
+        border: 2px solid #fff;
+    }
+
+    td a:hover{
+        border: 2px solid rgb(0, 131, 253);
+    }
+
+</style>
+<body>
+    <div class="wrap">
+
+        <header>
+            <div class="header-top">
+                <div class="navegacion">
+                    <input type="search" id="busqueda" placeholder="Buscar">
+                </div>
+            </div>
+            <div class="search" id="search">
+                <table class="search-table" id="searchTable">
+                    <thead>
+                        <tr>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Inicio</td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://www.google.com">Contacto1</a></td>
+                            <td><a href="/palomino">Contacto2</a></td>
+                            <td><a href="">Contacto3</a></td>
+                            <td><a href="">Contacto4</a></td>
+                            <td><a href="">Contacto5</a></td>
+                            <td><a href="">Contacto6</a></td>
+                            <td><a href="">Contacto7</a></td>
+                            <td><a href="">Contacto8</a></td>
+                            <td><a href="">Contacto9</a></td>
+                            <td><a href="">Contacto10</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </header>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati itaque nobis debitis iusto possimus explicabo, tempore, laudantium incidunt architecto nihil numquam quis non. Velit illo placeat natus assumenda odio tempora.</p>
+        <p>Repellendus, inventore ex asperiores necessitatibus itaque eius dicta cupiditate, nisi laudantium quibusdam quisquam odit soluta temporibus, recusandae vitae hic minus. Cumque nihil corrupti modi laudantium optio saepe ullam, amet nisi?</p>
+        <p>Eveniet inventore id nemo doloremque, itaque, aspernatur est, aut maxime doloribus amet odio. Reiciendis deleniti, sunt possimus assumenda, nostrum qui numquam fuga tempora error ad quod minus culpa? Repudiandae, non?</p>
+        <p>Provident, maxime. Laborum, ipsa! Ullam ab rem quae, esse, ipsum aliquid adipisci reiciendis temporibus consectetur nam voluptatibus quam doloremque placeat maxime cumque harum fugiat vitae eaque deleniti atque optio pariatur?</p>
+        <p>Cum sunt porro similique exercitationem odio deserunt accusantium ipsa amet enim ut eum consequuntur corporis saepe nulla aut labore eveniet dignissimos voluptas quibusdam, ea expedita blanditiis non? Cumque, voluptatem accusamus?</p>
+        <p>Quaerat vel aut sunt. Neque a eaque maiores veniam deserunt eum rem, veritatis natus labore explicabo ab? Minus nam amet debitis repellat nesciunt? Saepe eius laudantium mollitia, nesciunt asperiores quis.</p>
+        <p>Odio cupiditate vel, quas vitae mollitia dolor consequatur sint excepturi omnis autem. Enim voluptates molestiae ducimus perferendis consequatur sint cum, totam libero dolore dolorum ipsum. Praesentium iure vero sapiente sed.</p>
+        <p>Eius doloribus quos, et fugit delectus explicabo alias iste fuga labore culpa, numquam sequi vitae reiciendis, adipisci totam nam aut maiores quas temporibus quibusdam. Sint magni atque numquam sequi accusantium.</p>
+        <p>Quisquam quasi eius reprehenderit eveniet odio. Odit repellat voluptas eveniet expedita doloribus dolore, fuga quod harum dicta, ex accusantium error eaque nulla non illo, pariatur nihil tempora quas natus ipsa?</p>
+        <p>Iusto, repellat illo blanditiis error itaque praesentium eligendi et facilis cumque harum omnis neque, voluptates autem quasi nisi dicta recusandae quia quod quis rem nostrum enim laborum nobis alias. Rem?</p>
+    </div>
+    <script src="jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="buscar.js"></script>
+</body>
+</html>

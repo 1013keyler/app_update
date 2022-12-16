@@ -1,0 +1,186 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link rel="icon" href="{{url_for('static', filename="img/TCT.png")}}">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename="css/style.css")}}" type="text/css" media="all">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <title>{%block title%}{%endblock%}</title>
+    </head>
+    <body>
+        <header>
+            <div class="contenedor_buscador">
+                <form action="/buscar" method="POST">
+                    <input list="lista" type="text" name="caja_buscar" class="caja-busqueda" placeholder="Buscar"/ autocomplete="TRUE">
+
+                    <datalist id="lista">
+                        <option>PLAYA BLANCA</option>
+                        <option>BAHÍA CONCHA</option>
+                        <option>SANTA MARTA</option>
+                        <option>CABO SAN JUAN</option>
+                        <option>PARQUE TAYRONA</option>
+                        <option>CIUDAD PERDIDA</option>
+                        <option>PALOMINO</option>
+                        <option>MINCA</option>
+                        <option>POZO AZUL</option>
+                    </datalist>
+
+                    <label for="btn-buscar">
+                        <svg class="buscar-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="gray" d="M242.36,96.64l-7.41,13a95.68,95.68,0,0,0-130.47,35.93l-13-7.4A110.69,110.69,0,0,1,242.36,96.64Z" class="parte_1"/><path fill="gray" d="M322.36,58.4c-68.1-73-182.91-77-255.92-8.91A181.08,181.08,0,0,0,307.87,319.32q2.84-2.43,5.59-5c1.84-1.71,3.63-3.46,5.38-5.23A181.08,181.08,0,0,0,322.36,58.4Zm14.73,128.7a147.21,147.21,0,0,1-147,142.1q-2.61,0-5.25-.09A146.27,146.27,0,0,1,82.31,282.4C26.94,223,30.19,129.7,89.55,74.33A147.21,147.21,0,0,1,337.09,187.1Z" class="parte_1"/><path d="M242.36,96.64l-7.41,13a95.68,95.68,0,0,0-130.47,35.93l-13-7.4A110.69,110.69,0,0,1,242.36,96.64Z" class="colorfff svgShape"/><path fill="gray" d="M494.87,455.2,371.74,327.92l-49,45.73L445.89,501a33.3,33.3,0,0,0,23.3,10.58l1.19,0a33.53,33.53,0,0,0,24.49-56.39Z" class="parte_1"/><line x1="352.47" x2="308.34" y1="356.15" y2="308.84" fill="none"/><rect width="15" height="64.69" x="322.9" y="300.15" fill="gray" class="parte_1" transform="rotate(-43.01 330.367 332.477)"/><path fill="gray" d="M242.36,96.64l-7.41,13a95.68,95.68,0,0,0-130.47,35.93l-13-7.4A110.69,110.69,0,0,1,242.36,96.64Z" class="parte_1"/></svg>
+                    </label>
+                    <button id="btn-buscar" class="boton-buscar">
+                    </button>
+                </form>
+            </div>
+            <div class="herramientas">
+                <ul class="links">
+                    <li class="link"><a href="/" class="a">
+                        
+                        <svg class="x" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="60" height="60" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><path d="M23.121,9.069,15.536,1.483a5.008,5.008,0,0,0-7.072,0L.879,9.069A2.978,2.978,0,0,0,0,11.19v9.817a3,3,0,0,0,3,3H21a3,3,0,0,0,3-3V11.19A2.978,2.978,0,0,0,23.121,9.069ZM15,22.007H9V18.073a3,3,0,0,1,6,0Zm7-1a1,1,0,0,1-1,1H17V18.073a5,5,0,0,0-10,0v3.934H3a1,1,0,0,1-1-1V11.19a1.008,1.008,0,0,1,.293-.707L9.878,2.9a3.008,3.008,0,0,1,4.244,0l7.585,7.586A1.008,1.008,0,0,1,22,11.19Z" fill="#ffffff" data-original="#000000"></path></g></svg>
+    
+                        <b>inicio</b></a></li>
+                    <li class="link"><a href="/tours" class="a">
+                        <svg class="x" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="60" height="60" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve"><g>
+                            <g id="_01_align_center">
+                                <path d="M255.104,512.171l-14.871-12.747C219.732,482.258,40.725,327.661,40.725,214.577c0-118.398,95.981-214.379,214.379-214.379   s214.379,95.981,214.379,214.379c0,113.085-179.007,267.682-199.423,284.932L255.104,512.171z M255.104,46.553   c-92.753,0.105-167.918,75.27-168.023,168.023c0,71.042,110.132,184.53,168.023,236.473   c57.892-51.964,168.023-165.517,168.023-236.473C423.022,121.823,347.858,46.659,255.104,46.553z" fill="#ffffff" data-original="#000000"></path>
+                                <path d="M255.104,299.555c-46.932,0-84.978-38.046-84.978-84.978s38.046-84.978,84.978-84.978s84.978,38.046,84.978,84.978   S302.037,299.555,255.104,299.555z M255.104,172.087c-23.466,0-42.489,19.023-42.489,42.489s19.023,42.489,42.489,42.489   s42.489-19.023,42.489-42.489S278.571,172.087,255.104,172.087z" fill="#ffffff" data-original="#000000"></path>
+                            </g>
+                            </g>
+                        </svg>
+                        <b>tours</b>
+                    </a></li>
+                    <li class="link">
+                        <a href="/categoria" class="a">
+                            <svg class="x" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="60" height="60" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><path d="M18.656.93,6.464,13.122A4.966,4.966,0,0,0,5,16.657V18a1,1,0,0,0,1,1H7.343a4.966,4.966,0,0,0,3.535-1.464L23.07,5.344a3.125,3.125,0,0,0,0-4.414A3.194,3.194,0,0,0,18.656.93Zm3,3L9.464,16.122A3.02,3.02,0,0,1,7.343,17H7v-.343a3.02,3.02,0,0,1,.878-2.121L20.07,2.344a1.148,1.148,0,0,1,1.586,0A1.123,1.123,0,0,1,21.656,3.93Z" fill="#ffffff" data-original="#000000"></path><path d="M23,8.979a1,1,0,0,0-1,1V15H18a3,3,0,0,0-3,3v4H5a3,3,0,0,1-3-3V5A3,3,0,0,1,5,2h9.042a1,1,0,0,0,0-2H5A5.006,5.006,0,0,0,0,5V19a5.006,5.006,0,0,0,5,5H16.343a4.968,4.968,0,0,0,3.536-1.464l2.656-2.658A4.968,4.968,0,0,0,24,16.343V9.979A1,1,0,0,0,23,8.979ZM18.465,21.122a2.975,2.975,0,0,1-1.465.8V18a1,1,0,0,1,1-1h3.925a3.016,3.016,0,0,1-.8,1.464Z" fill="#ffffff" data-original="#000000"></path></g></svg><b>categorías</b>
+                        </a>
+                    </li>
+                    <li class="link"><a href="#conocenos" class="a">
+                        <svg class="x" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="60" height="60" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><path d="M12,12A6,6,0,1,0,6,6,6.006,6.006,0,0,0,12,12ZM12,2A4,4,0,1,1,8,6,4,4,0,0,1,12,2Z" fill="#ffffff" data-original="#000000"></path><path d="M12,14a9.01,9.01,0,0,0-9,9,1,1,0,0,0,2,0,7,7,0,0,1,14,0,1,1,0,0,0,2,0A9.01,9.01,0,0,0,12,14Z" fill="#ffffff" data-original="#000000"></path></g></svg>
+                        <b>conocenos</b>
+                    </a></li>
+                </ul>
+                <input type="checkbox" name="menu_sub" id="menu_sub">
+                <label for="menu_sub">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" class="icon">
+                        <g>
+                            <path d="M480,224H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h448c17.673,0,32-14.327,32-32S497.673,224,480,224z"/>
+                            <path d="M32,138.667h448c17.673,0,32-14.327,32-32s-14.327-32-32-32H32c-17.673,0-32,14.327-32,32S14.327,138.667,32,138.667z"/>
+                            <path d="M480,373.333H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h448c17.673,0,32-14.327,32-32S497.673,373.333,480,373.333z"/>
+                        </g>      
+                    </svg>                  
+                </label>
+            </div>
+        </header>
+        <div id="desplaza">
+            <ul class="links">
+                <li class="link"><a href="/" class="a">
+                    
+                    <svg class="x" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="60" height="60" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><path d="M23.121,9.069,15.536,1.483a5.008,5.008,0,0,0-7.072,0L.879,9.069A2.978,2.978,0,0,0,0,11.19v9.817a3,3,0,0,0,3,3H21a3,3,0,0,0,3-3V11.19A2.978,2.978,0,0,0,23.121,9.069ZM15,22.007H9V18.073a3,3,0,0,1,6,0Zm7-1a1,1,0,0,1-1,1H17V18.073a5,5,0,0,0-10,0v3.934H3a1,1,0,0,1-1-1V11.19a1.008,1.008,0,0,1,.293-.707L9.878,2.9a3.008,3.008,0,0,1,4.244,0l7.585,7.586A1.008,1.008,0,0,1,22,11.19Z" fill="#ffffff" data-original="#000000"></path></g></svg>
+
+                    <b>inicio</b></a></li>
+                <li class="link"><a href="/tours" class="a">
+                    <svg class="x" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="60" height="60" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve"><g>
+                        <g id="_01_align_center">
+                            <path d="M255.104,512.171l-14.871-12.747C219.732,482.258,40.725,327.661,40.725,214.577c0-118.398,95.981-214.379,214.379-214.379   s214.379,95.981,214.379,214.379c0,113.085-179.007,267.682-199.423,284.932L255.104,512.171z M255.104,46.553   c-92.753,0.105-167.918,75.27-168.023,168.023c0,71.042,110.132,184.53,168.023,236.473   c57.892-51.964,168.023-165.517,168.023-236.473C423.022,121.823,347.858,46.659,255.104,46.553z" fill="#ffffff" data-original="#000000"></path>
+                            <path d="M255.104,299.555c-46.932,0-84.978-38.046-84.978-84.978s38.046-84.978,84.978-84.978s84.978,38.046,84.978,84.978   S302.037,299.555,255.104,299.555z M255.104,172.087c-23.466,0-42.489,19.023-42.489,42.489s19.023,42.489,42.489,42.489   s42.489-19.023,42.489-42.489S278.571,172.087,255.104,172.087z" fill="#ffffff" data-original="#000000"></path>
+                        </g>
+                        </g>
+                    </svg>
+                    <b>tours</b>
+                </a></li>
+                <li class="link">
+                    <a href="/categoria" class="a">
+                        <svg class="x" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="60" height="60" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><path d="M18.656.93,6.464,13.122A4.966,4.966,0,0,0,5,16.657V18a1,1,0,0,0,1,1H7.343a4.966,4.966,0,0,0,3.535-1.464L23.07,5.344a3.125,3.125,0,0,0,0-4.414A3.194,3.194,0,0,0,18.656.93Zm3,3L9.464,16.122A3.02,3.02,0,0,1,7.343,17H7v-.343a3.02,3.02,0,0,1,.878-2.121L20.07,2.344a1.148,1.148,0,0,1,1.586,0A1.123,1.123,0,0,1,21.656,3.93Z" fill="#ffffff" data-original="#000000"></path><path d="M23,8.979a1,1,0,0,0-1,1V15H18a3,3,0,0,0-3,3v4H5a3,3,0,0,1-3-3V5A3,3,0,0,1,5,2h9.042a1,1,0,0,0,0-2H5A5.006,5.006,0,0,0,0,5V19a5.006,5.006,0,0,0,5,5H16.343a4.968,4.968,0,0,0,3.536-1.464l2.656-2.658A4.968,4.968,0,0,0,24,16.343V9.979A1,1,0,0,0,23,8.979ZM18.465,21.122a2.975,2.975,0,0,1-1.465.8V18a1,1,0,0,1,1-1h3.925a3.016,3.016,0,0,1-.8,1.464Z" fill="#ffffff" data-original="#000000"></path></g></svg><b>categorías</b>
+                    </a>
+                </li>
+                <li class="link"><a href="#conocenos" class="a">
+                    <svg class="x" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="60" height="60" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><path d="M12,12A6,6,0,1,0,6,6,6.006,6.006,0,0,0,12,12ZM12,2A4,4,0,1,1,8,6,4,4,0,0,1,12,2Z" fill="#ffffff" data-original="#000000"></path><path d="M12,14a9.01,9.01,0,0,0-9,9,1,1,0,0,0,2,0,7,7,0,0,1,14,0,1,1,0,0,0,2,0A9.01,9.01,0,0,0,12,14Z" fill="#ffffff" data-original="#000000"></path></g></svg>
+                    <b>conocenos</b>
+                </a></li>
+            </ul>
+        </div>
+        <div id="contenedor-img-encabezado" class="contenedor-img-encabezado">
+            <img class="encabezado-img" src="{{url_for('static', filename="img/cabosanjuan1.jpg")}}">
+        </div>
+        <label class="label-tct" for="contenedor-img-encabezado">
+            <h1>The Company Tours</h1>
+        </label>
+        <hr>
+        <br>
+        <br>
+    </div>
+        <div class="whatsapp">
+            <a href="">
+                <svg class="w" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><g data-name="wa whatsapp message communication chat"><path fill="#fff" d="M16,3A13,13,0,0,0,4.53,22.13L3,27.74a1,1,0,0,0,.27,1A1,1,0,0,0,4,29a.84.84,0,0,0,.27,0l5.91-1.65a1,1,0,0,0-.53-1.93L5.42,26.56l1.15-4.3a1,1,0,0,0-.1-.76A11,11,0,1,1,16,27a11.23,11.23,0,0,1-1.84-.15,1,1,0,0,0-1.15.82,1,1,0,0,0,.82,1.15A13,13,0,1,0,16,3Z"/><path fill="#fff" d="M15,11.21l-1.16-1.6a2.06,2.06,0,0,0-1.5-.84,2.08,2.08,0,0,0-1.62.6l-1.2,1.2a2.81,2.81,0,0,0-.8,2.08c0,1.77,1.36,4,4,6.6,3.09,3,5.23,4,6.69,4a2.7,2.7,0,0,0,2-.81l1.2-1.2a2,2,0,0,0-.24-3.11L20.8,17a2.09,2.09,0,0,0-1.83-.3l-1.49.47a.53.53,0,0,1-.26-.09,11.42,11.42,0,0,1-2.35-2.26.31.31,0,0,1,0-.11c.13-.44.35-1.15.5-1.64A2,2,0,0,0,15,11.21Zm1.29,7.63a2.33,2.33,0,0,0,1.75.2l1.54-.46,1.61,1.25L20,21c-.48.47-2.25.33-5.86-3.21-3-2.91-3.41-4.5-3.41-5.18A.89.89,0,0,1,11,12l1.28-1.19,1.18,1.65c-.16.49-.39,1.22-.51,1.65A2.12,2.12,0,0,0,13,15.51,11.24,11.24,0,0,0,16.33,18.84Z"/></g></svg>
+            </a>
+        </div>
+        {% block body %}{% endblock %}
+        <div class="pie">
+            <div class="target" class="acerca">
+                <h1>SOBRE NOSOTROS</h1>
+                <br>
+                <p>Somos una compañía de tours que te ofrece la posibilidad de vivir una aventura en distintos destinos y de distintas maneras, en familia, pareja e incluso solitario</p>
+                <br>
+                <p>Tenemos certificación para garantizar que tendrás una gran experiencia y un excelente servicio</p>
+            </div>
+            <div class="target" id="contacto">
+                <h1>CONTACTANOS</h1>
+                <img class="redes" src="{{ url_for('static', filename='img/fondo-social.svg') }}">
+                <br><br>
+                <a href="https://facebook.com">
+                    <svg class="icon" fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M24,3H8A5,5,0,0,0,3,8V24a5,5,0,0,0,5,5h8a1,1,0,0,0,1-1V20a1,1,0,0,0-1-1H15V17h1a1,1,0,0,0,1-1V12.5A2.5,2.5,0,0,1,19.5,10H22v2H21a2,2,0,0,0-2,2v2a1,1,0,0,0,1,1h1.72l-.5,2H20a1,1,0,0,0-1,1v4a1,1,0,0,0,2,0V21h1a1,1,0,0,0,1-.76l1-4a1,1,0,0,0-.18-.86A1,1,0,0,0,23,15H21V14h2a1,1,0,0,0,1-1V9a1,1,0,0,0-1-1H19.5A4.51,4.51,0,0,0,15,12.5V15H14a1,1,0,0,0-1,1v4a1,1,0,0,0,1,1h1v6H8a3,3,0,0,1-3-3V8A3,3,0,0,1,8,5H24a3,3,0,0,1,3,3V24a3,3,0,0,1-3,3H20a1,1,0,0,0,0,2h4a5,5,0,0,0,5-5V8A5,5,0,0,0,24,3Z" data-name="facebook fb face book"/></svg>
+                </a>
+                <a href="https://facebook.com">
+                    <svg class="icon" fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><g data-name="ig instagram insta photo"><path d="M20.45,13.32a1,1,0,0,0-.57,1.3,4,4,0,1,1-2.31-2.3,1,1,0,1,0,.71-1.87,6,6,0,0,0-6.37,9.85,6,6,0,0,0,8.48,0,6,6,0,0,0,1.36-6.41A1,1,0,0,0,20.45,13.32Z"/><circle cx="23" cy="9" r="1"/><path d="M28,9a5,5,0,0,0-4.9-5h0A77.11,77.11,0,0,0,9,4,5,5,0,0,0,4,8.92,91.91,91.91,0,0,0,4,23a5,5,0,0,0,4.9,5h0c2.36.22,4.73.34,7.1.34s4.71-.11,7.05-.34A5,5,0,0,0,28,23.08,87.09,87.09,0,0,0,28,9ZM26,23a3,3,0,0,1-3,3h-.1A71.73,71.73,0,0,1,9,26a3,3,0,0,1-3-3.08A92.4,92.4,0,0,1,6,9,3,3,0,0,1,9.09,6q3.44-.31,6.9-.32T23,6a3,3,0,0,1,3,3.08A85.13,85.13,0,0,1,26,23Z"/></g></svg>
+                </a>
+                <a href="https://facebook.com">
+                    <svg class="icon" fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><g data-name="youtube youtuber video play"><path d="M30,12a5.71,5.71,0,0,0-5.31-5.7C18.92,6,13.06,6,7.33,6.28,4.51,6.28,2,9,2,12a43.69,43.69,0,0,0,0,8.72,5.32,5.32,0,0,0,5.28,5.33h0q4.35.24,8.72.24t8.67-.23A5.34,5.34,0,0,0,30,20.8,31.67,31.67,0,0,0,30,12Zm-2,8.63a.49.49,0,0,0,0,.12,3.36,3.36,0,0,1-3.39,3.34,166,166,0,0,1-17.28,0A3.36,3.36,0,0,1,4,20.65a42,42,0,0,1,0-8.47.45.45,0,0,0,0-.11A3.78,3.78,0,0,1,7.38,8.28c2.86-.13,5.74-.19,8.62-.19s5.76.06,8.62.19h.05c1.71,0,3.33,1.84,3.33,3.79a.76.76,0,0,0,0,.15A30.11,30.11,0,0,1,28,20.61Z"/><path d="M20.79,15.51l-7.14-3.68a1,1,0,1,0-.92,1.78l5.43,2.79-4,2.07V16.4a1,1,0,0,0-2,0v3.72a1,1,0,0,0,1,1,1,1,0,0,0,.46-.11l7.14-3.72a1,1,0,0,0,.54-.89A1,1,0,0,0,20.79,15.51Z"/></g></svg>
+                </a>
+                <a href="https://facebook.com">
+                    <svg class="icon" fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M28.77,8.11a.87.87,0,0,0-.23-.2A4.69,4.69,0,0,0,29,6.54a1,1,0,0,0-.44-1,1,1,0,0,0-1.1,0,6.42,6.42,0,0,1-2.28.92,6.21,6.21,0,0,0-7.08-1A6.07,6.07,0,0,0,15,12.2a1,1,0,0,0,2-.4A4.08,4.08,0,0,1,19,7.28a4.24,4.24,0,0,1,5.12,1,1,1,0,0,0,.88.28l.25,0a1,1,0,0,0,.34,1.62,1,1,0,0,0-.36.88,13.07,13.07,0,0,1-4.89,11.24A12.75,12.75,0,0,1,7.69,24.61a9.06,9.06,0,0,0,4.54-2.18,1,1,0,0,0,.15-1.09,1,1,0,0,0-.93-.57,4,4,0,0,1-3-1.39,3.63,3.63,0,0,0,1-.35A1,1,0,0,0,10,18a1,1,0,0,0-.76-.84,4.42,4.42,0,0,1-3-2.48c.24,0,.48.05.74.06a1,1,0,0,0,1-.62A1,1,0,0,0,7.67,13C6,11.48,5.59,9.85,5.83,8.7a13.88,13.88,0,0,0,7,4,1,1,0,1,0,.38-2A12.1,12.1,0,0,1,6.39,6.31a1,1,0,0,0-.75-.38,1,1,0,0,0-.78.33,5.34,5.34,0,0,0-.31,6l-.09,0a1,1,0,0,0-.52.81,5.84,5.84,0,0,0,1.95,4.47,1,1,0,0,0-.18,1,6.63,6.63,0,0,0,3.18,3.57A13.89,13.89,0,0,1,4,23a1,1,0,0,0-.5,1.86A16.84,16.84,0,0,0,12,27.35a15.16,15.16,0,0,0,9.6-3.57,15.12,15.12,0,0,0,5.69-12.42,4.62,4.62,0,0,0,1.62-2.25A1,1,0,0,0,28.77,8.11Z" data-name="twitter bird social media trending"/></svg>
+                </a>
+                <br>
+                <br>
+                <br>
+                <div>
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.com/svgjs" xmlns:xlink="http://www.w3.org/1999/xlink"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#000000" d="M21.18,2.92H10.82a2.9,2.9,0,0,0-2.9,2.9V26.18a2.9,2.9,0,0,0,2.9,2.9H21.18a2.9,2.9,0,0,0,2.9-2.9V5.82A2.9,2.9,0,0,0,21.18,2.92Zm.74,23.26a.74.74,0,0,1-.74.74H10.82a.74.74,0,0,1-.74-.74V5.82a.74.74,0,0,1,.74-.74H21.18a.74.74,0,0,1,.74.74Z" class="color000 svgShape"/><path fill="#000000" d="M17,23.92H15a1.08,1.08,0,0,0,0,2.16h2a1.08,1.08,0,0,0,0-2.16Z" class="color000 svgShape"/></svg></svg>
+                    <br>
+                    <p>(+57) 323 808 74 38</p>
+                </div>
+                <div>
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="288" height="288" viewBox="0 0 32.784 32"><path fill="#000000" d="M17.066 2.134a14.887 14.887 0 0 0-10.56 4.374c-5.832 5.832-5.832 15.288 0 21.118C9.424 30.542 13.244 32 17.066 32s7.644-1.458 10.56-4.374c5.832-5.832 5.832-15.288 0-21.118a14.887 14.887 0 0 0-10.56-4.374zm9.146 24.078A12.85 12.85 0 0 1 17.066 30a12.857 12.857 0 0 1-9.146-3.788c-2.442-2.442-3.788-5.69-3.788-9.146S5.478 10.364 7.92 7.92a12.85 12.85 0 0 1 9.146-3.788c3.454 0 6.702 1.346 9.146 3.788S30 13.612 30 17.066s-1.346 6.704-3.788 9.146zM23 16h-5V8.986a1 1 0 0 0-2 0V17a1 1 0 0 0 1 1h6a1 1 0 0 0 0-2z" class="color000 svgShape"/></svg></svg>
+                    <p>Horario de atención:</p>
+                    <p>8:00AM a 6:00PM</p>
+                </div>
+                <br><br>
+                <a class="cre" href="https://iconscout.com/icon-pack/social-media-contact-info">Social Media Icon Pack</a> by <a href="https://iconscout.com/contributors/bombasticon">Bombasticon Studio</a> on <a href="https://iconscout.com">IconScout</a>
+            </div>
+            <div id="conocenos" class="target">
+                <h1>CONSTITUCIÓN LEGAL</h1>
+                <p>
+                    The company tours se encuentra actualmente registrada en la camára de comercio, contamos con certificación para el transporte y guía de turistas en distintos destinos
+                </p>
+                <p>
+                    Contamos con el aval de varias instituciones públicas que constatan el cumpliento con los estandares de atención al cliente además de medidas de seguridad para el cuidado de nuestros clientes
+                </p>
+            </div>
+
+            <script>
+                var boton = document.getElementById('menu_sub');
+                boton.addEventListener("change", mostrarmenu, true);
+                function mostrarmenu()
+                {
+                    var estado = boton.checked;
+                    if(estado)
+                    {
+                        document.getElementById('desplaza').style.transform = "translateX(0)";
+                    }
+                    else
+                    {
+                        document.getElementById('desplaza').style.transform = "translateX(1000px)";
+                    }
+                }
+            </script>
+    </body>
+</html>
